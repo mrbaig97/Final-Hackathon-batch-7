@@ -116,7 +116,7 @@ const RegisterScreen = ({ navigation }: Props) => {
         secureTextEntry
       />
 
-      <Button mode="contained" onPress={_onSignUpPressed} style={styles.button}>
+      <Button mode="contained" textColor='white' onPress={_onSignUpPressed} style={styles.button}>
         Sign Up
       </Button>
 

@@ -42,7 +42,8 @@ const LoginScreen = ({ navigation }: Props) => {
         const data = {
           id: uid,
           email: email.value,
-          password: password.value
+          password: password.value,
+          role: 'user'
         };
         addDoc(collection(db, "users",), data);
         setnotificationMessage('User logged in Sucessfully');
@@ -59,7 +60,6 @@ const LoginScreen = ({ navigation }: Props) => {
         onToggleSnackBar();
       });
   };
-
   return (
     <Background>
       <BackButton goBack={() => navigation.navigate('HomeScreen')} />

@@ -7,7 +7,10 @@ import {
   RegisterScreen,
   ForgotPasswordScreen,
   Dashboard,
+  QRScreen,
 } from './screens';
+
+import { firebase, db, addDoc, auth, collection, doc, getDocs, setDoc, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged } from './firebase/config';
 
 const Router = createStackNavigator(
   {
@@ -16,9 +19,10 @@ const Router = createStackNavigator(
     RegisterScreen,
     ForgotPasswordScreen,
     Dashboard,
+    QRScreen,
   },
   {
-    initialRouteName: 'HomeScreen',
+    initialRouteName: !auth.currentUser ? 'QRScreen' : 'HomeScreen',
     headerMode: 'none',
   }
 );
